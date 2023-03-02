@@ -1,0 +1,115 @@
+@import 'navbar';
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.hero{
+    background-color: $light;
+
+    &_container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        height: 90vh;
+        z-index: 1;
+        width: 100%;
+        max-width: 1200px;
+        padding: 20px;
+
+        @include tablet{
+            grid-template-columns: 1fr;
+            height: 100%;
+        }
+
+        &-left{
+            width: 100%;
+            line-height: 1.2;
+
+            @include tablet{
+                padding: 5rem 0;
+            }
+
+            @include mobile{
+                line-height: 1.5;
+            }
+            h1{
+                font-size: 4rem;
+                color: $lime;
+
+                @include mobile{
+                    font-size: 2rem;
+                }
+            }
+
+            h2{
+                font-size: 4rem;
+                font-weight: bold;
+
+                @include mobile{
+                    font-size: 2rem;
+                }
+            }
+
+            p{
+                font-size: 3rem;
+                color: $dark;
+                margin-top: 1rem;
+                font-weight: 700;
+
+                @include mobile{
+                    font-size: 1.5rem;
+                }
+            }
+
+            &-btn{
+                font-size: 1rem;
+                background-color: $lime;
+                padding: 10px 30px;
+                border: none;
+                border-radius: 4px;
+                margin-top: 2rem;
+                cursor: pointer;
+                position: relative;
+                transition: .3s;
+                outline: none;
+                a{
+                    color: $light;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    position: relative;
+                    z-index: 2;
+                }
+
+                &::after{
+                    position: absolute;
+                    content: '';
+                    height: 100%;
+                    width: 0;
+                    background-color: $orangeRed;
+                    right: 0;
+                    top: 0;
+                    transition: .3s;
+                } 
+
+                &:hover::after{
+                    width: 100%;
+                }
+            }
+        }
+
+        &-right{
+            text-align: center;
+
+            &-img{
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
